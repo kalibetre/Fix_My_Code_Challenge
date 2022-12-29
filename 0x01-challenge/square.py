@@ -23,6 +23,9 @@ class Square():
                 self.height = self.width
             elif "height" in kwargs and self.width != self.width:
                 self.width = self.height
+        elif args is not None and len(args) > 1:
+            self.width = args[0]
+            self.height = args[0]
 
     def area_of_my_square(self):
         """ Returns the area of the square """
