@@ -16,14 +16,14 @@ class Square():
         """
         Initializes a square
         """
-        if kwargs is not None:
+        if len(kwargs) > 0:
             for key, value in kwargs.items():
                 setattr(self, key, value)
             if "width" in kwargs and self.width != self.height:
                 self.height = self.width
             elif "height" in kwargs and self.width != self.width:
                 self.width = self.height
-        elif args is not None and len(args) > 1:
+        elif len(args) > 0:
             self.width = args[0]
             self.height = args[0]
 
@@ -43,6 +43,18 @@ class Square():
 if __name__ == "__main__":
     """ Tests the Square class"""
     s = Square(width=12, height=9)
+    print(s)
+    print(s.area_of_my_square())
+    print(s.permiter_of_my_square())
+    s = Square(width=12)
+    print(s)
+    print(s.area_of_my_square())
+    print(s.permiter_of_my_square())
+    s = Square()
+    print(s)
+    print(s.area_of_my_square())
+    print(s.permiter_of_my_square())
+    s = Square(12)
     print(s)
     print(s.area_of_my_square())
     print(s.permiter_of_my_square())
