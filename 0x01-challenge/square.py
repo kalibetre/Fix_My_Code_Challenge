@@ -18,12 +18,6 @@ class Square():
         """
         for key, value in kwargs.items():
             setattr(self, key, value)
-        if "width" in kwargs and self.width != self.height:
-            self.height = self.width
-        if "height" in kwargs and self.width != self.height:
-            self.width = self.height
-        if self.width < 0:
-            self.width = self.height = 0
 
     def area_of_my_square(self):
         """ Returns the area of the square """
