@@ -20,6 +20,8 @@ class Square():
             self.width = args[0]
             self.height = self.width
         elif kwargs is not None:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
             if "width" in kwargs:
                 self.width = kwargs.get("width")
                 self.height = self.width
