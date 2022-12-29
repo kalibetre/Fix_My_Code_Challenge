@@ -16,12 +16,16 @@ class Square():
         """
         Initializes a square
         """
-        for key, value in kwargs.items():
-            setattr(self, key, value)
-        if "width" in kwargs and self.width != self.height:
-            self.height = self.width
-        if "height" in kwargs and self.width != self.width:
-            self.width = self.height
+        if len(kwargs) > 0:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+            if "width" in kwargs and self.width != self.height:
+                self.height = self.width
+            elif "height" in kwargs and self.width != self.height:
+                self.width = self.height
+        elif len(args) > 0:
+            self.width = args[0]
+            self.height = args[0]
 
     def area_of_my_square(self):
         """ Returns the area of the square """
@@ -43,6 +47,10 @@ if __name__ == "__main__":
     print(s.area_of_my_square())
     print(s.permiter_of_my_square())
     s = Square(width=12)
+    print(s)
+    print(s.area_of_my_square())
+    print(s.permiter_of_my_square())
+    s = Square(height=12)
     print(s)
     print(s.area_of_my_square())
     print(s.permiter_of_my_square())
