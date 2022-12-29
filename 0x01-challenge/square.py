@@ -16,10 +16,12 @@ class Square():
         """
         Initializes a square
         """
-        self.width = kwargs.get("width", None)
-        if self.width is None:
-            self.width = kwargs.get("height", 0)
-        self.height = self.width
+        if "width" in kwargs:
+            self.width = kwargs.get("width")
+            self.height = self.width
+        elif "height" in kwargs:
+            self.height = kwargs.get("height")
+            self.width = self.height
 
     def area_of_my_square(self):
         """ Returns the area of the square """
