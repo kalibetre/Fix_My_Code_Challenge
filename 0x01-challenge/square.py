@@ -16,9 +16,10 @@ class Square():
         """
         Initializes a square
         """
-        if kwargs is not None:
-            for key, value in kwargs.items():
-                setattr(self, key, value)
+        if args is not None and len(args) > 0:
+            self.width = args[0]
+            self.height = self.width
+        elif kwargs is not None:
             if "width" in kwargs:
                 self.width = kwargs.get("width")
                 self.height = self.width
@@ -30,7 +31,7 @@ class Square():
         """ Returns the area of the square """
         return self.width * self.width
 
-    def PermiterOfMySquare(self):
+    def perimeter_of_my_square(self):
         """ Returns the perimeter of a square """
         return (self.width * 2) + (self.height * 2)
 
@@ -40,8 +41,8 @@ class Square():
 
 
 if __name__ == "__main__":
-
+    """ Tests the Square class"""
     s = Square(width=12, height=9)
     print(s)
     print(s.area_of_my_square())
-    print(s.PermiterOfMySquare())
+    print(s.perimeter_of_my_square())
